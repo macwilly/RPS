@@ -10,7 +10,7 @@ import Foundation
 enum Signs{
     case rock
     case paper
-    case scissors
+    case scissor
     
     var displaySign: String {
         switch self {
@@ -18,8 +18,22 @@ enum Signs{
             return "🪨"
         case .paper:
             return "📜"
-        case .scissors:
+        case .scissor:
             return "✂️"
+        }
+    }
+    
+    func compareSigns(opponentSign: Signs) -> GameState {
+        if self == opponentSign {
+            return .draw
+        } else if self == .rock && opponentSign == .scissor {
+            return .win
+        } else if self == .paper && opponentSign == .rock {
+            return .win
+        } else if self == .scissor && opponentSign == .paper {
+            return .win
+        } else {
+            return .lose
         }
     }
 }
