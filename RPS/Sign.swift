@@ -7,6 +7,12 @@
 
 import Foundation
 
+func randomSign() -> Signs {
+    let sign = Int.random(in: 0...2)
+    let signs: [Signs] = [.rock, .paper, .scissor]
+    return signs[sign]
+}
+
 enum Signs{
     case rock
     case paper
