@@ -21,11 +21,11 @@ enum Signs{
     var displaySign: String {
         switch self {
         case .rock:
-            return "🪨"
+            return "👊"
         case .paper:
-            return "📜"
+            return "✋"
         case .scissor:
-            return "✂️"
+            return "✌️"
         }
     }
     
