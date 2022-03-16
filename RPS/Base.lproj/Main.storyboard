@@ -23,6 +23,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="👊">
                                     <fontDescription key="titleFontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="70"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="playerSignRockAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xIj-8u-x9c"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzJ-dr-oHu">
                                 <rect key="frame" x="160" y="408" width="94" height="116"/>
@@ -31,6 +34,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="✋">
                                     <fontDescription key="titleFontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="70"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="playerSignPaperAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZCk-RB-z4v"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buS-7k-1gy">
                                 <rect key="frame" x="285" y="408" width="94" height="116"/>
@@ -39,6 +45,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="✌️">
                                     <fontDescription key="titleFontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="70"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="playerSignScissorAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NrT-lL-N7t"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfg-Kl-yva">
                                 <rect key="frame" x="120" y="143" width="175" height="70"/>
@@ -67,11 +76,22 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Play Again">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="playAgainAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j9o-px-JHV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="appsSign" destination="xfg-Kl-yva" id="bOC-IU-uWP"/>
+                        <outlet property="gameStatus" destination="Zda-M9-LHS" id="pSd-HQ-lyj"/>
+                        <outlet property="playAgain" destination="T39-sV-yGE" id="sOL-M3-u0x"/>
+                        <outlet property="playerSignPaper" destination="GzJ-dr-oHu" id="CR8-ht-0oe"/>
+                        <outlet property="playerSignRock" destination="GzJ-dr-oHu" id="JyL-TW-Xty"/>
+                        <outlet property="playerSignScissor" destination="buS-7k-1gy" id="qmf-oz-G4k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
