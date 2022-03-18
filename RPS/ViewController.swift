@@ -32,5 +32,16 @@ class ViewController: UIViewController {
     @IBAction func playAgainAction(_ sender: Any) {
     }
     
+    func changeGameStatusMessage(_ state: GameState){
+        gameStatus.text = state.stateMessage
+    }
+    
+    func changeBackGroundColor(_ state: GameState) {
+        view.backgroundColor = state.stateColor
+    }
+    
+    
+        
+    
 }
 

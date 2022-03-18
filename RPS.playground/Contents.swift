@@ -29,3 +29,14 @@ enum GameState {
 }
 
 
+
+
+func randomSign() -> Sign {
+    let sign = Int.random(in: 0...2)
+    let signs: [Sign] = [.rock, .paper, .scissor]
+    return signs[sign]
+}
+
+let opp1 = randomSign()
+let opp2 = randomSign()
+let opp3 = randomSign()
