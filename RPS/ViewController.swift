@@ -40,7 +40,12 @@ class ViewController: UIViewController {
         view.backgroundColor = state.stateColor
     }
     
-    
+    func isStart(){
+        appsSign.text = "🤖"
+        playAgain.isHidden = true
+        
+        
+    }
         
     
 }
