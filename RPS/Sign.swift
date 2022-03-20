@@ -7,11 +7,6 @@
 
 import Foundation
 
-func randomSign() -> Signs {
-    let sign = Int.random(in: 0...2)
-    let signs: [Signs] = [.rock, .paper, .scissor]
-    return signs[sign]
-}
 
 enum Signs{
     case rock
@@ -27,6 +22,13 @@ enum Signs{
         case .scissor:
             return "✌️"
         }
+    }
+    
+    
+    func randomSign() -> Signs {
+        let sign = Int.random(in: 0...2)
+        let signs: [Signs] = [.rock, .paper, .scissor]
+        return signs[sign]
     }
     
     func compareSigns(opponentSign: Signs) -> GameState {
