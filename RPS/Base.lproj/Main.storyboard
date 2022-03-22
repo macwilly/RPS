@@ -89,7 +89,7 @@
                         <outlet property="gameStatus" destination="Zda-M9-LHS" id="pSd-HQ-lyj"/>
                         <outlet property="playAgain" destination="T39-sV-yGE" id="sOL-M3-u0x"/>
                         <outlet property="playerSignPaper" destination="GzJ-dr-oHu" id="CR8-ht-0oe"/>
-                        <outlet property="playerSignRock" destination="GzJ-dr-oHu" id="JyL-TW-Xty"/>
+                        <outlet property="playerSignRock" destination="kwL-c6-sZo" id="3pV-FJ-EST"/>
                         <outlet property="playerSignScissor" destination="buS-7k-1gy" id="qmf-oz-G4k"/>
                     </connections>
                 </viewController>
