@@ -75,31 +75,27 @@ class ViewController: UIViewController {
     
     func play(_ playerSign: Signs) {
         print("PLayer Sign is \(playerSign)")
-        let playerButtons: [UIButton] = [playerSignRock, playerSignPaper, playerSignScissor]
+        
         let computerSign: Signs = playerSign.randomSign()
         let gameStatus: GameState = playerSign.compareSigns(opponentSign: computerSign)
-        gameStatusChange(gameStatus)
         appsSign.text = computerSign.displaySign
-        for pb in playerButtons {
-            pb.isEnabled = false
-        }
+        playerSignRock.isEnabled = false
+        playerSignPaper.isEnabled = false
+        playerSignScissor.isEnabled = false
         hide(playerSign)
+        gameStatusChange(gameStatus)
         playAgain.isHidden = false
     }
     
     func hide(_ sentSign: Signs){
         print("Sent Sign is \(sentSign)")
-        switch sentSign {
-        case .rock:
-            print("Here rock")
+        if sentSign == .rock {
             playerSignPaper.isHidden = true
             playerSignScissor.isHidden = true
-        case .paper:
-            print("Here Paper")
+        } else if sentSign == .paper {
             playerSignRock.isHidden = true
             playerSignScissor.isHidden = true
-        case .scissor:
-            print("Here Scissors")
+        } else if sentSign == .scissor {
             playerSignRock.isHidden = true
             playerSignPaper.isHidden = true
         }
