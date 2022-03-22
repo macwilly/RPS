@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        isStart()
+        isStart(GameState.start)
         // Do any additional setup after loading the view.
     }
     
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playAgainAction(_ sender: Any) {
-        isStart()
+        isStart(GameState.start)
     }
     
     func gameStatusChange(_ state: GameState){
@@ -54,10 +54,12 @@ class ViewController: UIViewController {
         view.backgroundColor = state.stateColor
     }
     
-    func isStart(){
+    func isStart(_ status: GameState){
         let playerButtons: [UIButton] = [playerSignRock, playerSignPaper, playerSignScissor]
         appsSign.text = "🤖"
         playAgain.isHidden = true
+        view.backgroundColor = status.stateColor
+        gameStatus.text = status.stateMessage
         
         //updating all of the buttons
         for pb in playerButtons{
@@ -72,6 +74,7 @@ class ViewController: UIViewController {
     }
     
     func play(_ playerSign: Signs) {
+        print("PLayer Sign is \(playerSign)")
         let playerButtons: [UIButton] = [playerSignRock, playerSignPaper, playerSignScissor]
         let computerSign: Signs = playerSign.randomSign()
         let gameStatus: GameState = playerSign.compareSigns(opponentSign: computerSign)
@@ -80,23 +83,26 @@ class ViewController: UIViewController {
         for pb in playerButtons {
             pb.isEnabled = false
         }
-        hide(sign: playerSign)
+        hide(playerSign)
         playAgain.isHidden = false
     }
     
-    func hide(sign: Signs){
-        switch sign {
+    func hide(_ sentSign: Signs){
+        print("Sent Sign is \(sentSign)")
+        switch sentSign {
         case .rock:
+            print("Here rock")
             playerSignPaper.isHidden = true
             playerSignScissor.isHidden = true
         case .paper:
+            print("Here Paper")
             playerSignRock.isHidden = true
             playerSignScissor.isHidden = true
         case .scissor:
+            print("Here Scissors")
             playerSignRock.isHidden = true
             playerSignPaper.isHidden = true
         }
-            
     }
     
 }
